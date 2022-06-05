@@ -1,9 +1,9 @@
 ﻿# asrock_z690_extreme
-[Lm-sensors](https://github.com/lm-sensors/lm-sensors) configuration for [ASRock Z690 Extreme](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp) motherboards on Linux.
+[Lm-sensors](https://github.com/lm-sensors/lm-sensors) configuration for [ASRock Z690 Extreme](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp) and [ASRock Z690 Extreme WiFi 6E](https://www.asrock.com/mb/Intel/Z690%20Extreme%20WiFi%206E/) motherboards on Linux.
 **Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on different hardware.
 
 ## The motherboard
-ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboard to handle multiple fans and voltage lines.
+ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboards to control multiple fans, temperature sensors and voltage lines.
 
 <img  src="https://www.pcinq.com/wp-content/uploads/2021/11/ASRock-Z690-Extreme-Wifi-6E-5.jpg"  align="center"  width="500">
 
@@ -104,10 +104,8 @@ These assignments can be checked manually on the motherboard. Using only one fan
 | CPU Fan2 | fan3 |
 | Chassis Fan4 | fan4 |
 | Chassis Fan2 | fan5 |
-| Chassis Fan5 | fan1 |
-| Chassis Fan6 | fan2 |
+| Chassis Fan1 | fan6 |
 | Chassis Fan5 | fan7 |
- 
 
 ### 3. temperatures
 |Motherboard | lm-sensor |
