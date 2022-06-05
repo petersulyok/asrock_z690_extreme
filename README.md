@@ -4,7 +4,9 @@
 
 ## The motherboard
 ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboard to handle multiple fans and voltage lines.
+
 <img  src="https://www.pcinq.com/wp-content/uploads/2021/11/ASRock-Z690-Extreme-Wifi-6E-5.jpg"  align="center"  width="500">
+
 See more details about the motherboard in the [review of pcinq.com](https://www.pcinq.com/reviews/motherboards-reviews/asrock-z690-extreme-wifi-6e-tested/).
 
 ## lm-sensors
@@ -70,27 +72,27 @@ This is the hardest part since motherboard and SIO chip vendors are not always p
 I followed the same method that I used in my [previous project](https://github.com/petersulyok/asrock_z390_taichi).
 
  - [Nuvoton NCT677xF Data Sheet](https://media.digikey.com/pdf/data%20sheets/nuvoton%20pdfs/nct6776f,d.pdf)
- - Z690EXTREME.xml file of [ASRock Motherboard Utility](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp#Download) (former name was A-Tuning). The file is located at `C:\Program Files (x86)\ASRock Utility\A-Tuning\Conf\Z690EXTREME.xml`.
+ - `Z690EXTREME.xml` file of [ASRock Motherboard Utility](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp#Download) (former name was A-Tuning). The file is located at `C:\Program Files (x86)\ASRock Utility\A-Tuning\Conf\Z690EXTREME.xml`.
 
 ### 1. voltages
 Mapping and naming of the different voltage lines can be identified with the help of A-Tuning's configuration file. If you run this utility then the minimum and maximum voltage values will also be displayed.
 
-|Motherboard | lm-sensor | Register | ASRock utility | Min |
+|Motherboard | lm-sensor | Register | ASRock utility | Min | Max |
 |--|--|--|--|--|--|
 | CPU Vcore | in0 | 0x80 | SIO8_V | 0.9 | 2.1 |
 | +5.0V | in1 | 0x81 | P5P0_V | 4.5 | 5.5 |
 | ignored | in2 | 0x82 | none | | |
 | +3.3V | in3 | 0x83 | P3P3_V | 2.98 | 3.63 |
 | +12V | in4 | 0x84 | P12_V | 2.98 | 3.63 |
-| VCCIN_AUX | in5 | 0x85 | SIO1_V | 0.95 | 2.613 |
-| DRAM | in6 | 0x86 | SIO3_V | 2.98 | 3.63 |
+| VCCIN_AUX | in5 | 0x85 | SIO1_V | 1.7 | 2.5 |
+| DRAM | in6 | 0x86 | SIO3_V | 1.1 | 1.65 |
 | ignored | in7 | 0x87 | | | |
 | ignored | in8 | 0x88 | | | |
 | ignored | in9 | 0x89 | | | |
-| +1.05V PROC | in10 | 0x8A | SIO6_V | 2.98 | 3.63 |
-| +0.82V PCH | in11 | 0x8B | SIO4_V | 2.98 | 3.63 |
-| +1.05V PCH | in12 | 0x8C | SIO2_V | 2.98 | 3.63 |
-| VCCSA | in13 | 0x8D | SIO5_V | 2.98 | 3.63 |
+| +1.05V PROC | in10 | 0x8A | SIO6_V | 0.95 | 1.5 |
+| +0.82V PCH | in11 | 0x8B | SIO4_V | 0.72 | 1.3 |
+| +1.05V PCH | in12 | 0x8C | SIO2_V | 0.94 | 2.5 |
+| VCCSA | in13 | 0x8D | SIO5_V | 0.95 | 1.8 |
 
 ### 2. fans
 These assignments can be checked manually on the motherboard. Using only one fan in different connector and checking the `lm-sensor` report will make this step straightforward. Luckily the fan values do not require additional computational steps in the configuration file.
