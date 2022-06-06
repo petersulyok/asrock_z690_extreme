@@ -1,6 +1,6 @@
 ﻿# asrock_z690_extreme
 [Lm-sensors](https://github.com/lm-sensors/lm-sensors) configuration for [ASRock Z690 Extreme](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp) and [ASRock Z690 Extreme WiFi 6E](https://www.asrock.com/mb/Intel/Z690%20Extreme%20WiFi%206E/) motherboards on Linux.
-**Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on different hardware.
+**Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on a different hardware.
 
 ## The motherboard
 ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboards to control multiple fans, temperature sensors and voltage lines.
@@ -95,7 +95,7 @@ Mapping and naming of the different voltage lines can be identified with the hel
 | VCCSA | in13 | 0x8D | SIO5_V | 0.95 | 2.0 |
 
 ### 2. fans
-These assignments can be checked manually on the motherboard. Using only one fan in different connector and checking the `lm-sensor` report will make this step straightforward. Luckily the fan values do not require additional computational steps in the configuration file.
+These assignments can be checked either with turning the fans on and off manually or adjusting their rotation speed in the BIOS individually. The reported fan values do not require additional computational steps in the configuration file.
 
 |Motherboard | lm-sensor |
 |--|--|
@@ -114,7 +114,7 @@ These assignments can be checked manually on the motherboard. Using only one fan
 | CPU | temp7 (PECI Agent 0) |
   
 Please note:
- - `CPUTIN` is a sensor on the Motherboard shows the temperature around the CPU socket. It will be lower than the real CPU temperature
+ - `CPUTIN` is a sensor on the motherboard showing the temperature around the CPU socket. It will always be lower than the real CPU temperature
  - `PECI Agent 0` was selected to represent the CPU temperature
  - Use `coretemp` kernel module if you need temperatures of the individual CPU cores
  - There are no useful information about the other sensors, they are ignored
@@ -127,23 +127,24 @@ You can copy this new configuration file (`asrock_z690_extreme.conf`) to folder 
     CPU Vcore:      1.41 V  (min =  +0.90 V, max =  +2.10 V)
     +5.0V:          5.04 V  (min =  +4.51 V, max =  +5.50 V)
     +3.3V:          3.31 V  (min =  +2.98 V, max =  +3.63 V)
-    +12V:          11.81 V  (min = +11.42 V, max = +12.58 V)
+    +12V:          11.90 V  (min = +11.42 V, max = +12.58 V)
     VCCIN_AUX:      1.78 V  (min =  +1.70 V, max =  +2.50 V)
     DRAM:           1.34 V  (min =  +1.10 V, max =  +1.65 V)
-    +1.05V PROC:    1.06 V  (min =  +0.94 V, max =  +1.50 V)
+    +1.05V PROC:    1.06 V  (min =  +0.94 V, max =  +1.81 V)
     +0.82V PCH:   832.00 mV (min =  +0.72 V, max =  +1.30 V)
-    +1.05V PCH:     1.01 V  (min =  +0.95 V, max =  +2.04 V)
-    VCCSA:          1.23 V  (min =  +0.94 V, max =  +1.81 V)
-    Chassis fan3:  710 RPM  (min =    0 RPM)
-    CPU fan1:      834 RPM  (min =  200 RPM)
-    CPU fan2:      831 RPM  (min =    0 RPM)
-    Chassis fan4:  655 RPM  (min =    0 RPM)
-    Chassis fan2:  460 RPM  (min =    0 RPM)
-    Chassis fan1:  680 RPM  (min =    0 RPM)
-    Chassis fan5: 1196 RPM  (min =    0 RPM)
-    Motherboard:   +35.0°C    sensor = thermistor
+    +1.05V PCH:     1.01 V  (min =  +0.95 V, max =  +1.50 V)
+    VCCSA:          1.23 V  (min =  +0.94 V, max =  +2.00 V)
+    Chassis fan3:  903 RPM  (min =    0 RPM)
+    CPU fan1:      837 RPM  (min =  200 RPM)
+    CPU fan2:      835 RPM  (min =    0 RPM)
+    Chassis fan4:  659 RPM  (min =    0 RPM)
+    Chassis fan2:  465 RPM  (min =    0 RPM)
+    Chassis fan1:  664 RPM  (min =    0 RPM)
+    Chassis fan5: 1185 RPM  (min =    0 RPM)
+    Motherboard:   +35.5°C    sensor = thermistor
     CPU:           +32.0°C  (high = +80.0°C, hyst = +75.0°C)
                             (crit = +115.0°C)
+    beep_enable:  enabled
 
 Notes:
 - Beep warnings are enabled.
@@ -153,11 +154,12 @@ Notes:
 - This configuration was tested on Debian Linux 11 (kernel v5.17) and Arch Linux (kernel v5.15).
 
 ## References
+- [My previous ASRock Z390 Taichi github project](https://github.com/petersulyok/asrock_z390_taichi)
+- [aaronsb's github project](https://gist.github.com/aaronsb/347d62b63456ae131916c3affd212c05)
 - [lm-sensors's github project](https://github.com/lm-sensors/lm-sensors)
 - [nct6775 kernel module](https://www.kernel.org/doc/html/v5.12/hwmon/nct6775.html)
 - [Nuvoton NCT677xF Data sheet](https://media.digikey.com/pdf/data%20sheets/nuvoton%20pdfs/nct6776f,d.pdf)
 - [www.pcinq.com site's review](https://www.pcinq.com/reviews/motherboards-reviews/asrock-z690-extreme-wifi-6e-tested/)
-- github: [aaronsb](https://gist.github.com/aaronsb)/[ASRock_Z390m.conf](https://gist.github.com/aaronsb/347d62b63456ae131916c3affd212c05)
 - [Improving Nuvoton NCT6776 lm_sensors output](https://blog.hqcodeshop.fi/archives/276-Improving-Nuvoton-NCT6776-lm_sensors-output.html)
 
 > Written with [StackEdit](https://stackedit.io/).
