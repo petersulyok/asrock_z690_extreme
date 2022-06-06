@@ -89,10 +89,10 @@ Mapping and naming of the different voltage lines can be identified with the hel
 | ignored | in7 | 0x87 | | | |
 | ignored | in8 | 0x88 | | | |
 | ignored | in9 | 0x89 | | | |
-| +1.05V PROC | in10 | 0x8A | SIO6_V | 0.95 | 1.5 |
+| +1.05V PROC | in10 | 0x8A | SIO6_V | 0.95 | 1.8 |
 | +0.82V PCH | in11 | 0x8B | SIO4_V | 0.72 | 1.3 |
-| +1.05V PCH | in12 | 0x8C | SIO2_V | 0.94 | 2.5 |
-| VCCSA | in13 | 0x8D | SIO5_V | 0.95 | 1.8 |
+| +1.05V PCH | in12 | 0x8C | SIO2_V | 0.94 | 1.5 |
+| VCCSA | in13 | 0x8D | SIO5_V | 0.95 | 2.0 |
 
 ### 2. fans
 These assignments can be checked manually on the motherboard. Using only one fan in different connector and checking the `lm-sensor` report will make this step straightforward. Luckily the fan values do not require additional computational steps in the configuration file.
