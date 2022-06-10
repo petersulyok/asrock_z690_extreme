@@ -1,6 +1,10 @@
 ﻿# asrock_z690_extreme
-[Lm-sensors](https://github.com/lm-sensors/lm-sensors) configuration for [ASRock Z690 Extreme](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp) and [ASRock Z690 Extreme WiFi 6E](https://www.asrock.com/mb/Intel/Z690%20Extreme%20WiFi%206E/) motherboards on Linux.
+[Lm-sensors](https://github.com/lm-sensors/lm-sensors) configuration for [ASRock Z690 Extreme](https://www.asrock.com/mb/Intel/Z690%20Extreme/index.asp) and [ASRock Z690 Extreme WiFi 6E](https://www.asrock.com/mb/Intel/Z690%20Extreme%20WiFi%206E/) motherboards on Linux. 
+
 **Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on a different hardware.
+
+Update: The configuration file has been added to [lm-sensors project](https://github.com/lm-sensors/lm-sensors).
+
 
 ## The motherboard
 ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboards to control multiple fans, temperature sensors and voltage lines.
@@ -120,7 +124,7 @@ Please note:
  - There are no useful information about the other sensors, they are ignored
 
 ## The new configuration
-You can copy this new configuration file (`asrock_z690_extreme.conf`) to folder `/etc/sensors.d/`, restart the `lm_sensors.service`, and the output of the `sensors` command will display this:
+You can copy this new configuration file (`Z690_Extreme.conf`) to folder `/etc/sensors.d/`, restart the `lm_sensors.service`, and the output of the `sensors` command will display this:
 
     nct6798-isa-02a0
     Adapter: ISA adapter
