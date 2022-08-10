@@ -106,9 +106,9 @@ These assignments can be checked either with turning the fans on and off manuall
 | Chassis Fan3 | fan1 |
 | CPU Fan1 | fan2 |
 | CPU Fan2 | fan3 |
-| Chassis Fan4 | fan4 |
+| Chassis Fan1 | fan4 |
 | Chassis Fan2 | fan5 |
-| Chassis Fan1 | fan6 |
+| Chassis Fan4 | fan6 |
 | Chassis Fan5 | fan7 |
 
 ### 3. temperatures
