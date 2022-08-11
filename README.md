@@ -126,29 +126,31 @@ Please note:
 ## The new configuration
 You can copy this new configuration file (`Z690_Extreme.conf`) to folder `/etc/sensors.d/`, restart the `lm_sensors.service`, and the output of the `sensors` command will display this:
 
+    
     nct6798-isa-02a0
     Adapter: ISA adapter
-    CPU Vcore:      1.41 V  (min =  +0.90 V, max =  +2.10 V)
+    CPU Vcore:    496.00 mV (min =  +0.20 V, max =  +2.04 V)
     +5.0V:          5.04 V  (min =  +4.51 V, max =  +5.50 V)
-    +3.3V:          3.31 V  (min =  +2.98 V, max =  +3.63 V)
-    +12V:          11.90 V  (min = +11.42 V, max = +12.58 V)
+    +3.3V:          3.33 V  (min =  +2.98 V, max =  +3.63 V)
+    +12V:          11.81 V  (min = +11.42 V, max = +12.58 V)
     VCCIN_AUX:      1.78 V  (min =  +1.70 V, max =  +2.50 V)
     DRAM:           1.34 V  (min =  +1.10 V, max =  +1.65 V)
     +1.05V PROC:    1.06 V  (min =  +0.94 V, max =  +1.81 V)
     +0.82V PCH:   832.00 mV (min =  +0.72 V, max =  +1.30 V)
     +1.05V PCH:     1.01 V  (min =  +0.95 V, max =  +1.50 V)
     VCCSA:          1.23 V  (min =  +0.94 V, max =  +2.00 V)
-    Chassis fan3:  903 RPM  (min =    0 RPM)
-    CPU fan1:      837 RPM  (min =  200 RPM)
-    CPU fan2:      835 RPM  (min =    0 RPM)
-    Chassis fan4:  659 RPM  (min =    0 RPM)
-    Chassis fan2:  465 RPM  (min =    0 RPM)
-    Chassis fan1:  664 RPM  (min =    0 RPM)
-    Chassis fan5: 1185 RPM  (min =    0 RPM)
-    Motherboard:   +35.5°C    sensor = thermistor
-    CPU:           +32.0°C  (high = +80.0°C, hyst = +75.0°C)
-                            (crit = +115.0°C)
+    Chassis fan3:  581 RPM  (min =    0 RPM)
+    CPU fan1:      773 RPM  (min =  200 RPM)
+    CPU fan2:      716 RPM  (min =    0 RPM)
+    Chassis fan1:  869 RPM  (min =    0 RPM)
+    Chassis fan2:  503 RPM  (min =    0 RPM)
+    Chassis fan4:  563 RPM  (min =    0 RPM)
+    Chassis fan5: 2523 RPM  (min =    0 RPM)
+    Motherboard:   +30.5°C    sensor = thermistor
+    CPU:           +29.5°C  (high = +80.0°C, hyst = +75.0°C)
+			(crit = +115.0°C)
     beep_enable:  enabled
+
 
 Notes:
 - Beep warnings are enabled.
