@@ -3,15 +3,16 @@
 
 **Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on a different hardware.
 
-Update: The configuration file has been added to [lm-sensors project](https://github.com/lm-sensors/lm-sensors).
+Update (June 10, 2022): The configuration file has been forwarded to [lm-sensors project](https://github.com/lm-sensors/lm-sensors)
+Update (October 24, 2022): In the queue, waiting for merge
 
 
 ## The motherboard
 ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboards to control multiple fans, temperature sensors and voltage lines.
 
-<img  src="https://www.pcinq.com/wp-content/uploads/2021/11/ASRock-Z690-Extreme-Wifi-6E-5-1024x576.webp"  align="center"  width="500">
+![Nuvoton NCT6796D-E](NCT6796D-E.png)
 
-See more details about the motherboard in the [review of pcinq.com](https://www.pcinq.com/asrock-z690-extreme-wifi-6e-tested/).
+Read more details about the motherboard in the [review of pcinq.com](https://www.pcinq.com/asrock-z690-extreme-wifi-6e-tested/).
 
 ## lm-sensors
 The `sensors-detect` command in the `lm-sensors` package can identify the SIO chip slighly differently:
