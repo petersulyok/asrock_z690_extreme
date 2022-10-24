@@ -3,8 +3,9 @@
 
 **Warning:** this configuration is hardware dependent, it can work properly only on this motherboard! You have to modify the configuration file if you want to use it on a different hardware.
 
-Update (June 10, 2022): The configuration file has been forwarded to [lm-sensors project](https://github.com/lm-sensors/lm-sensors)
-Update (October 24, 2022): In the queue, waiting for merge
+Updates:
+- [June 10, 2022]: The configuration file has been forwarded to [lm-sensors project](https://github.com/lm-sensors/lm-sensors)
+- [October 24, 2022]: In the queue, waiting for merge
 
 
 ## The motherboard
