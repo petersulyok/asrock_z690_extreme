@@ -6,7 +6,7 @@
 Updates:
 - [June 10, 2022]: The configuration file has been forwarded to [lm-sensors project](https://github.com/lm-sensors/lm-sensors)
 - [October 24, 2022]: In the queue, waiting for merge
-
+- [April, 2026]: Merged to main branch of [lm-sensors project](https://github.com/lm-sensors/lm-sensors).
 
 ## The motherboard
 ASRock used **Nuvoton NCT6796D-E** super I/O chip (SIO) on Z690 Extreme motherboards to control multiple fans, temperature sensors and voltage lines.
